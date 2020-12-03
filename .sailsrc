@@ -1,6 +1,6 @@
 {
   "hooks": {
-    "grunt": false
+    "grunt": true
   },
   "paths": {
     "public": "assets"
