@@ -1,4 +1,4 @@
- /*
+/**
  * Production environment settings
  * (sails.config.*)
  *
@@ -47,8 +47,7 @@ module.exports = {
     *                                                                          *
     ***************************************************************************/
     default: {
-      // adapter: 'heroku_postgres',
-      // url: process.env.DATABASE_URL,
+      // adapter: 'sails-mysql',
       // url: 'mysql://user:password@host:port/database',
       //--------------------------------------------------------------------------
       //  /\   To avoid checking it in to version control, you might opt to set
@@ -251,10 +250,10 @@ module.exports = {
     * > Be sure to use the right protocol!  ("http://" vs. "https://")         *
     *                                                                          *
     ***************************************************************************/
-    onlyAllowOrigins: [
-      // 'https://example.com',
-      // 'https://staging.example.com',
-    ],
+    // onlyAllowOrigins: [
+    //   'https://example.com',
+    //   'https://staging.example.com',
+    // ],
 
 
     /***************************************************************************

@@ -48,14 +48,9 @@ module.exports.datastores = {
     *    (See https://sailsjs.com/config/datastores for help.)                 *
     *                                                                          *
     ***************************************************************************/
-    // running MySQL server on MacOS type in the following in command line:
-    // brew services start mysql
-    // mysql -u root -p
-    adapter: 'sails-mysql',
-    url: 'mysql://root:password@localhost:3306/sails_app',
+    // adapter: 'sails-mysql',
     // url: 'mysql://user:password@host:port/database',
-    // Go here for more details on the url: https://sailsjs.com/documentation/reference/configuration/sails-config-datastores#?the-connection-url
-    // Go here to fix database not connecting error: https://stackoverflow.com/questions/50093144/mysql-8-0-client-does-not-support-authentication-protocol-requested-by-server
+
   },
 
 

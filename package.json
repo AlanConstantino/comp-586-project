@@ -1,7 +1,7 @@
 {
   "name": "forum",
   "private": true,
-  "version": "0.0.2",
+  "version": "0.0.0",
   "description": "a Sails application",
   "keywords": [],
   "dependencies": {
@@ -12,9 +12,7 @@
     "sails-hook-apianalytics": "^2.0.3",
     "sails-hook-organics": "^2.0.0",
     "sails-hook-orm": "^2.1.1",
-    "sails-hook-sockets": "^2.0.0",
-    "sails-mysql": "1.0.1",
-    "sails-postgresql": "^2.0.0"
+    "sails-hook-sockets": "^2.0.0"
   },
   "devDependencies": {
     "eslint": "5.16.0",
@@ -33,11 +31,11 @@
   "main": "app.js",
   "repository": {
     "type": "git",
-    "url": "git://github.com/anonymous node/sails user/forum.git"
+    "url": "git://github.com/alanconstantino/forum.git"
   },
-  "author": "anonymous node/sails user",
+  "author": "alanconstantino",
   "license": "",
   "engines": {
-    "node": "^12.19"
+    "node": "^15.3"
   }
 }
