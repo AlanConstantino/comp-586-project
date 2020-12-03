@@ -1,7 +1,4 @@
 {
-  "paths": {
-    "public": "assets"
-  },
   "generators": {
     "modules": {}
   },
