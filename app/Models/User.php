@@ -12,8 +12,7 @@ use Tymon\JWTAuth\Contracts\JWTSubject;
 
 class User extends Authenticatable implements JWTSubject //, MustVerifyEmail
 {
-    use Notifiable,
-        HasFactory;
+    use Notifiable, HasFactory;
 
     /**
      * The attributes that are mass assignable.
@@ -32,6 +31,9 @@ class User extends Authenticatable implements JWTSubject //, MustVerifyEmail
      * @var array
      */
     protected $hidden = [
+        'created_at',
+        'updated_at',
+        'email_verified_at',
         'password',
         'remember_token',
     ];
@@ -112,5 +114,10 @@ class User extends Authenticatable implements JWTSubject //, MustVerifyEmail
     public function getJWTCustomClaims()
     {
         return [];
+    }
+
+    public function cars()
+    {
+        return $this->hasMany(Car::class, 'user_id', 'id');
     }
 }
