@@ -13,6 +13,9 @@ export default [
   { path: '/email/resend', name: 'verification.resend', component: page('auth/verification/resend.vue') },
 
   { path: '/home', name: 'home', component: page('home.vue') },
+  { path: '/add', name: 'add', component: page('addCar.vue') },
+  { path: '/edit/:id', name: 'edit', component: page('editCar.vue') },
+
   {
     path: '/settings',
     component: page('settings/index.vue'),
