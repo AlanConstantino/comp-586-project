@@ -2,6 +2,11 @@
 
 use Illuminate\Support\Facades\Route;
 
+
+// Route::get('{any}', function () {
+//     return view('spa');
+// })->where('any', '.*');
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,6 +18,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Route::get('/welcome', function () {
-//     return view('welcome');
+// Route::get('/spa', function () {
+//     return view('spa');
 // });
