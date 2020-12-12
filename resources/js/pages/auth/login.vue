@@ -22,7 +22,7 @@
           </div>
 
           <!-- Remember Me -->
-          <div class="form-group row">
+          <!-- <div class="form-group row">
             <div class="col-md-3" />
             <div class="col-md-7 d-flex">
               <checkbox v-model="remember" name="remember">
@@ -33,7 +33,7 @@
                 {{ $t('forgot_password') }}
               </router-link>
             </div>
-          </div>
+          </div> -->
 
           <div class="form-group row">
             <div class="col-md-7 offset-md-3 d-flex">
