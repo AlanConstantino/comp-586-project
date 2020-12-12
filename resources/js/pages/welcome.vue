@@ -39,7 +39,7 @@ export default {
   },
 
   data: () => ({
-    title: 'Comp 586 Project'
+    title: 'Car List'
   }),
 
   computed: mapGetters({
