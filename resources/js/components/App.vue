@@ -39,8 +39,7 @@ export default {
     const { appName } = window.config
 
     return {
-      title: appName,
-      titleTemplate: `%s · ${appName}`
+      title: 'Cars List'
     }
   },
 
