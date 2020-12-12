@@ -81,10 +81,12 @@ class LoginController extends Controller
         if ($user instanceof MustVerifyEmail && ! $user->hasVerifiedEmail()) {
             throw VerifyEmailException::forUser($user);
         }
-
-        throw ValidationException::withMessages([
-            $this->username() => [trans('auth.failed')],
-        ]);
+        
+        return response()->json('Not authorized. Wrong email or password', 401);
+        
+        // throw ValidationException::withMessages([
+        //     $this->username() => [trans('auth.failed')],
+        // ]);
     }
 
     /**
