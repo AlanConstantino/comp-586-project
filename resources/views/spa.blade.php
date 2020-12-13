@@ -21,7 +21,8 @@ $config = [
 
   {{-- Global configuration object --}}
   <script>
-    window.config = @json($config);
+    console.log('hi');
+    // window.config = @json($config);
   </script>
 
   {{-- Load the application scripts --}}
