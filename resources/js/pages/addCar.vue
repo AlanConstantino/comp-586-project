@@ -33,7 +33,7 @@
         },
         methods: {
             addCar() {
-                const baseUrl = 'http://localhost:8000/api/car/add?';
+                const baseUrl = 'https://alan-laravel-spa.herokuapp.com/api/car/add?';
                 const token = this.$store.getters['auth/token'];
                 const params = new URLSearchParams(this.car);
                 const options = { method: 'POST' };
