@@ -1,75 +1,50 @@
-# Laravel-Vue SPA 
+# Comp-586-Project
 
-<a href="https://github.com/cretueusebiu/laravel-vue-spa/actions"><img src="https://github.com/cretueusebiu/laravel-vue-spa/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/cretueusebiu/laravel-vue-spa"><img src="https://poser.pugx.org/cretueusebiu/laravel-vue-spa/d/total.svg" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/cretueusebiu/laravel-vue-spa"><img src="https://poser.pugx.org/cretueusebiu/laravel-vue-spa/v/stable.svg" alt="Latest Stable Version"></a>
+### Installation
 
-> A Laravel-Vue SPA starter project template.
+You can follow the steps [here](https://laravel.com/docs/8.x) to install Laravel.
 
-<p align="center">
-<img src="https://i.imgur.com/NHFTsGt.png">
-</p>
+#### Prerequisites
+- PHP (7.4.13)
+- Composer (2.0.8)
+- Node (12.20.0)
+- NPM (6.14.8)
+- Laravel (8.12.3)
+- Make sure you have a MySQL database locally and go in the `.env` file to edit database settings
 
-## Features
+#### Installation commands
+- `composer install` to install composer dependencies
+- `npm install` to install npm dependencies
+- `npm run watch` to compile and watch JS changes
+- `php artisan key:generate` to generate laravel key
+- `php artisan jwt:secret` to generate jwt auth key
+- `php artisan migrate` to create database with models
+- `php artisan serve` to serve server to localhost
 
-- Laravel 8
-- Vue + VueRouter + Vuex + VueI18n + ESlint
-- Pages with dynamic import and custom layouts
-- Login, register, email verification and password reset
-- Authentication with JWT
-- Socialite integration
-- Bootstrap 4 + Font Awesome 5
+### Tech Stack
+- Laravel (Back-end)
+- Vue.js (Front-end)
 
-## Installation
+### Main folders of interest
+- `apps/Models` - Models
+- `app/Http/Controllers` - Controllers
+- `routes/api.php` - REST API
+- `/resources/js/pages/` - Vue
 
-- `composer create-project --prefer-dist cretueusebiu/laravel-vue-spa`
-- Edit `.env` and set your database connection details
-- (When installed via git clone or download, run `php artisan key:generate` and `php artisan jwt:secret`)
-- `php artisan migrate`
-- `npm install`
+### Characteristics of the application
+- SPA
+- ORM
+- MVC (server-side)
+- JWT Authentication
+- Responsive Design
+- 2 Tables (Cars and Users)
+- Each user has their own list of cars (i.e. users don't share the same car list)
 
-## Usage
+### Test Accounts
+- Account #1
+  - username: test@gmail.com
+  - password: password
+- Account #2
+  - username: test2@gmail.com
+  - password: password
 
-#### Development
-
-```bash
-# Build and watch
-npm run watch
-
-# Serve with hot reloading (not working)
-npm run hot
-```
-
-#### Production
-
-```bash
-npm run production
-```
-
-## Socialite
-
-This project comes with GitHub as an example for [Laravel Socialite](https://laravel.com/docs/5.8/socialite).
-
-To enable the provider create a new GitHub application and use `https://example.com/api/oauth/github/callback` as the Authorization callback URL.
-
-Edit `.env` and set `GITHUB_CLIENT_ID` and `GITHUB_CLIENT_SECRET` with the keys form your GitHub application.
-
-For other providers you may need to set the appropriate keys in `config/services.php` and redirect url in `OAuthController.php`.
-
-## Email Verification
-
-To enable email verification make sure that your `App\User` model implements the `Illuminate\Contracts\Auth\MustVerifyEmail` contract.
-
-## Testing
-
-```bash
-# Run unit and feature tests
-vendor/bin/phpunit
-
-# Run Dusk browser tests
-php artisan dusk
-```
-
-## Changelog
-
-Please see [CHANGELOG](CHANGELOG.md) for more information what has changed recently.
