@@ -1,4 +1,6 @@
-# Comp-586-Project
+# [Comp-586-Project](https://alan-laravel-spa.herokuapp.com/)
+
+You can view the live application [here](https://alan-laravel-spa.herokuapp.com/).
 
 ### Installation
 
