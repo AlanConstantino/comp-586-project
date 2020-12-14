@@ -30,8 +30,9 @@ I utilized one of Laravel's templates to create this so there is some boilerplat
 - ORM
 - MVC (server-side)
 - JWT Authentication
+- OAuth with GitHub
 - Responsive Design
-- 2 Tables (Cars and Users)
+- 3 Tables (cars, users, and oauth_providers)
 - Each user has their own list of cars (i.e. users don't share the same car list)
 
 ### Installation
