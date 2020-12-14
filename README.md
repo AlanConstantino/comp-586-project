@@ -2,6 +2,38 @@
 
 You can view the live application [here](https://alan-laravel-spa.herokuapp.com/).
 
+I utilized one of Laravel's templates to create this so there is some boilerplate code that is not utilized.
+
+### Test Accounts
+- Account #1
+  - username: test@gmail.com
+  - password: password
+- Account #2
+  - username: test2@gmail.com
+  - password: password
+  
+### Main folders of interest
+- `apps/Models` - Models
+- `app/Http/Controllers` - Controllers
+- `routes/api.php` - REST API
+- `resources/js/pages/` - Vue pages
+- `database/factories` - Factories for testing
+- `database/migrations` - Database schema definition for ORM
+
+### Tech Stack
+- Laravel 8 (Back-end)
+- Vue.js + VueRouter + Vuex + VueI18n (Front-end)
+- Bootstrap 4 (Front-end)
+
+### Features of the application
+- SPA
+- ORM
+- MVC (server-side)
+- JWT Authentication
+- Responsive Design
+- 2 Tables (Cars and Users)
+- Each user has their own list of cars (i.e. users don't share the same car list)
+
 ### Installation
 
 You can follow the steps [here](https://laravel.com/docs/8.x) to install Laravel.
@@ -22,31 +54,4 @@ You can follow the steps [here](https://laravel.com/docs/8.x) to install Laravel
 - `php artisan jwt:secret` to generate jwt auth key
 - `php artisan migrate` to create database with models
 - `php artisan serve` to serve server to localhost
-
-### Tech Stack
-- Laravel (Back-end)
-- Vue.js (Front-end)
-
-### Main folders of interest
-- `apps/Models` - Models
-- `app/Http/Controllers` - Controllers
-- `routes/api.php` - REST API
-- `/resources/js/pages/` - Vue
-
-### Characteristics of the application
-- SPA
-- ORM
-- MVC (server-side)
-- JWT Authentication
-- Responsive Design
-- 2 Tables (Cars and Users)
-- Each user has their own list of cars (i.e. users don't share the same car list)
-
-### Test Accounts
-- Account #1
-  - username: test@gmail.com
-  - password: password
-- Account #2
-  - username: test2@gmail.com
-  - password: password
 
