@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Car;
 use Illuminate\Http\Request;
 use Tymon\JWTAuth\Facades\JWTAuth;
+// use Illuminate\Support\Facades\Log; // for debug
+use App\ViewModels\CarsViewModel;
 
 class CarController extends Controller
 {
@@ -21,10 +23,11 @@ class CarController extends Controller
     // shows all the car models associated with the user currently logged in
     public function index()
     {
-        $user = $this->checkAuth();
-        $cars = Car::where('user_id', $user->id)->get()->toArray();
+        $user = $this->checkAuth(); // get user info
+        $cars = Car::where('user_id', $user->id)->get()->toArray(); // get all cars associated with user
 
-        return response()->json(array_reverse($cars), 200);
+        $viewModel = new CarsViewModel($user, $cars);
+        return $viewModel->cars();
     }
 
     // adds a new car model

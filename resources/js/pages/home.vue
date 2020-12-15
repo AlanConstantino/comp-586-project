@@ -5,8 +5,9 @@
         <table class="table table-bordered table-hover table-responsive">
             <thead>
             <tr>
-                <th>ID</th>
-                <!-- <th>User_ID</th> -->
+                <th>Car ID</th>
+                <th>User ID</th>
+                <th>User Name</th>
                 <th>Year</th>
                 <th>Make</th>
                 <th>Type</th>
@@ -18,7 +19,8 @@
             <tbody>
             <tr v-for="car in cars" :key="car.id">
                 <td>{{ car.id }}</td>
-                <!-- <td>{{ car.user_id }}</td> -->
+                <td>{{ car.uid }}</td>
+                <td>{{ car.name }}</td>
                 <td>{{ car.year }}</td>
                 <td>{{ car.make }}</td>
                 <td>{{ car.type }}</td>
@@ -39,14 +41,13 @@
 <script>
     export default {
       middleware: 'auth',
-
       data() {
         return {
             cars: []
         }
       },
       created() {
-        const url = 'https://alan-laravel-spa.herokuapp.com/api/cars?';
+        const url = 'http://alan-laravel-spa.herokuapp.com/api/cars?';
         // const url = 'http://127.0.0.1:8000/api/cars?';
         const options = { method: 'GET' };
         const token = { token: this.$store.getters['auth/token'] };
@@ -60,7 +61,7 @@
       },
       methods: {
         deleteCar(id) {
-          const url = `https://alan-laravel-spa.herokuapp.com/api/car/delete/${id}?`;
+          const url = `http://alan-laravel-spa.herokuapp.com/api/car/delete/${id}?`;
           // const url = `http://127.0.0.1:8000/api/car/delete/${id}?`;
           const options = { method: 'DELETE' };
           const token = { token: this.$store.getters['auth/token'] };
