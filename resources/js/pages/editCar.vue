@@ -33,7 +33,7 @@
         },
         created() {
             const url = `https://alan-laravel-spa.herokuapp.com/api/car/edit/${this.$route.params.id}?token=`;
-            // const url = `http://127.0.0.1:8000/api/car/edit/${this.$route.params.id}?token=`;
+            // const url = `http://localhost:8000/api/car/edit/${this.$route.params.id}?token=`;
             const token = this.$store.getters['auth/token'];
             const params = new URLSearchParams(token);
             const options = { method: 'GET' };
@@ -46,7 +46,7 @@
         methods: {
             updateCar() {
                 const baseUrl = `https://alan-laravel-spa.herokuapp.com/api/car/update/${this.$route.params.id}?`;
-                // const baseUrl = `http://127.0.0.1:8000/api/car/update/${this.$route.params.id}?`;
+                // const baseUrl = `http://localhost:8000/api/car/update/${this.$route.params.id}?`;
                 const token = this.$store.getters['auth/token'];
                 const params = new URLSearchParams(this.car);
                 const options = { method: 'PUT' };
