@@ -11,7 +11,7 @@ I utilized one of Laravel's templates to create this so there is some boilerplat
 - Account #2
   - username: test2@gmail.com
   - password: password
-  
+
 ### Main folders of interest
 - `apps/Models` - Models
 - `app/Http/Controllers` - Controllers
@@ -20,6 +20,7 @@ I utilized one of Laravel's templates to create this so there is some boilerplat
 - `database/factories` - Factories for testing
 - `database/migrations` - Database schema definition for ORM
 - `app/ViewModels` - For view model
+- `resources/router/routes.js` - For front-end routes
 
 ### Tech Stack
 - Laravel 8 (Back-end)
