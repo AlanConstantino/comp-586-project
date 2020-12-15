@@ -47,7 +47,7 @@ Route::group(['middleware' => 'guest:api'], function () {
 });
 
 // api for cars
-Route::post('cars', [CarController::class, 'index']);
+Route::get('cars', [CarController::class, 'index']);
 Route::prefix('car')->group(function() {
     Route::delete('/delete/{id}', [CarController::class, 'delete']);
     Route::get('/edit/{id}', [CarController::class, 'edit']);

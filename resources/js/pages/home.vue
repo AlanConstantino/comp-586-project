@@ -47,8 +47,8 @@
       },
       created() {
         const url = 'https://alan-laravel-spa.herokuapp.com/api/cars?';
-        // const url = 'http://localhost:8000/api/cars?';
-        const options = { method: 'POST' };
+        // const url = 'http://127.0.0.1:8000/api/cars?';
+        const options = { method: 'GET' };
         const token = { token: this.$store.getters['auth/token'] };
         const params = new URLSearchParams(token);
 
@@ -61,7 +61,7 @@
       methods: {
         deleteCar(id) {
           const url = `https://alan-laravel-spa.herokuapp.com/api/car/delete/${id}?`;
-          // const url = `http://localhost:8000/api/car/delete/${id}?`;
+          // const url = `http://127.0.0.1:8000/api/car/delete/${id}?`;
           const options = { method: 'DELETE' };
           const token = { token: this.$store.getters['auth/token'] };
           const params = new URLSearchParams(token);
