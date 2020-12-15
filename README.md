@@ -1,6 +1,6 @@
-# [Comp-586-Project](https://alan-laravel-spa.herokuapp.com/)
+# [Comp-586-Project](http://alan-laravel-spa.herokuapp.com/)
 
-You can view the live application [here](https://alan-laravel-spa.herokuapp.com/).
+You can view the live application [here](http://alan-laravel-spa.herokuapp.com/).
 
 I utilized one of Laravel's templates to create this so there is some boilerplate code that is not utilized.
 
@@ -19,6 +19,7 @@ I utilized one of Laravel's templates to create this so there is some boilerplat
 - `resources/js/pages/` - Vue pages
 - `database/factories` - Factories for testing
 - `database/migrations` - Database schema definition for ORM
+- `app/ViewModels` - For view model
 
 ### Tech Stack
 - Laravel 8 (Back-end)
@@ -28,6 +29,7 @@ I utilized one of Laravel's templates to create this so there is some boilerplat
 ### Features of the application
 - SPA
 - ORM
+- View Model
 - MVC (server-side)
 - JWT Authentication
 - OAuth with GitHub
