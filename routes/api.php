@@ -26,7 +26,7 @@ use Illuminate\Support\Facades\Route;
 Route::group(['middleware' => 'auth:api'], function () {
     Route::post('logout', [LoginController::class, 'logout']);
 
-    Route::post('user', [UserController::class, 'current']);
+    Route::get('user', [UserController::class, 'current']);
 
     Route::patch('settings/profile', [ProfileController::class, 'update']);
     Route::patch('settings/password', [PasswordController::class, 'update']);
@@ -47,10 +47,12 @@ Route::group(['middleware' => 'guest:api'], function () {
 });
 
 // api for cars
-Route::get('cars', [CarController::class, 'index']);
-Route::prefix('car')->group(function() {
-    Route::delete('/delete/{id}', [CarController::class, 'delete']);
-    Route::get('/edit/{id}', [CarController::class, 'edit']);
-    Route::put('/update/{id}', [CarController::class, 'update']);
-    Route::post('/add', [CarController::class, 'add']);
+Route::group(['middleware' => 'auth:api'], function () {
+    Route::get('cars', [CarController::class, 'index']);
+    Route::prefix('car')->group(function() {
+        Route::delete('/delete/{id}', [CarController::class, 'delete']);
+        Route::get('/edit/{id}', [CarController::class, 'edit']);
+        Route::put('/update/{id}', [CarController::class, 'update']);
+        Route::post('/add', [CarController::class, 'add']);
+    });
 });

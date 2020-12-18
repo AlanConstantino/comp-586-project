@@ -24,6 +24,8 @@
 </template>
 
 <script>
+    import axios from 'axios';
+
     export default {
         middleware: 'auth',
         data() {
@@ -32,18 +34,9 @@
             }
         },
         methods: {
-            addCar() {
-                const baseUrl = 'http://alan-laravel-spa.herokuapp.com/api/car/add?';
-                // const baseUrl = 'http://127.0.0.1:8000/api/car/add?';
-                const token = this.$store.getters['auth/token'];
-                const params = new URLSearchParams(this.car);
-                const options = { method: 'POST' };
-                const url = baseUrl.concat(params, '&token=', token);
-
-                fetch(url, options)
-                    .then(response => this.$router.push({name: 'home'}))
-                    .catch(error => console.log(error))
-                    .finally(() => this.loading = false);
+            async addCar() {
+                const { data } = await axios.post('/api/car/add', this.car);
+                this.$router.push({name: 'home'});
             }
         }
     }

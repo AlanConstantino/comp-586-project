@@ -10,14 +10,19 @@ use App\ViewModels\CarsViewModel;
 
 class CarController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     // checks token of user
     private function checkAuth()
     {
         if (! $user = JWTAuth::parseToken()->authenticate()) {
             return response()->json(['User Not Authorized'], 401);
+        } else {
+            return $user;
         }
-
-        return $user;
     }
 
     // shows all the car models associated with the user currently logged in
@@ -42,7 +47,7 @@ class CarController extends Controller
         ]);
         $car->save();
 
-        return response()->json('The car successfully added');
+        return response()->json('The car successfully added', 200);
     }
 
     // gets data from the car model to display to user
