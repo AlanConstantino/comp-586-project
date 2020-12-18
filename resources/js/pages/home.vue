@@ -39,41 +39,24 @@
     </div>
 </template>
 <script>
+    import axios from 'axios';
+
     export default {
       middleware: 'auth',
       data() {
         return {
-            cars: []
+            cars: [],
         }
       },
-      created() {
-        const url = 'http://alan-laravel-spa.herokuapp.com/api/cars?';
-        // const url = 'http://127.0.0.1:8000/api/cars?';
-        const options = { method: 'GET' };
-        const token = { token: this.$store.getters['auth/token'] };
-        const params = new URLSearchParams(token);
-
-        // raw fetch request
-        fetch(url + params, options)
-          .then(response => response.json())
-          .then(data => this.cars = data)
-          .catch(error => console.log(error));
+      async created() {
+        const { data } = await axios.get('api/cars');
+        this.cars = data;
       },
       methods: {
-        deleteCar(id) {
-          const url = `http://alan-laravel-spa.herokuapp.com/api/car/delete/${id}?`;
-          // const url = `http://127.0.0.1:8000/api/car/delete/${id}?`;
-          const options = { method: 'DELETE' };
-          const token = { token: this.$store.getters['auth/token'] };
-          const params = new URLSearchParams(token);
-
-          // raw fetch request
-          fetch(url + params, options)
-            .then(response => {
-              let i = this.cars.map(item => item.id).indexOf(id); // find index of your object
-              this.cars.splice(i, 1)
-            })
-            .catch(error => console.log(error));
+        async deleteCar(id) {
+          const { data } = await axios.delete(`/api/car/delete/${id}`);
+          let i = this.cars.map(item => item.id).indexOf(id); // find index of your object
+          this.cars.splice(i, 1);
         }
       }
     }

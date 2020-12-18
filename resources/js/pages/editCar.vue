@@ -24,38 +24,24 @@
 </template>
 
 <script>
+    import axios from 'axios';
+
     export default {
-        middleware: 'check-auth',
+        middleware: 'auth',
         data() {
             return {
                 car: {}
             }
         },
-        created() {
-            const url = `http://alan-laravel-spa.herokuapp.com/api/car/edit/${this.$route.params.id}?token=`;
-            // const url = `http://127.0.0.1:8000/api/car/edit/${this.$route.params.id}?token=`;
-            const token = this.$store.getters['auth/token'];
-            const params = new URLSearchParams(token);
-            const options = { method: 'GET' };
-
-            fetch(url + params, options)
-                .then(response => response.json())
-                .then(data => this.car = data)
-                .catch(error => console.log(error));
+        async created() {
+            const { data } =  await axios.get(`/api/car/edit/${this.$route.params.id}`);
+            this.car = data;
         },
         methods: {
-            updateCar() {
-                const baseUrl = `http://alan-laravel-spa.herokuapp.com/api/car/update/${this.$route.params.id}?`;
-                // const baseUrl = `http://127.0.0.1:8000/api/car/update/${this.$route.params.id}?`;
-                const token = this.$store.getters['auth/token'];
-                const params = new URLSearchParams(this.car);
-                const options = { method: 'PUT' };
-                const url = baseUrl.concat(params, '&token=', token);
-
-                fetch(url, options)
-                    .then(response => this.$router.push({name: 'home'}))
-                    .catch(error => console.log(error));
-                }
+            async updateCar() {
+                const { data } = await axios.put(`/api/car/update/${this.$route.params.id}`, this.car);
+                this.$router.push({name: 'home'});
+            }
         }
     }
 </script>
